@@ -13,10 +13,10 @@
     <section class="main-section">
         <div class="navbar">
             <a href="#" class="logo"><img src="image-removebg-preview.png" width="100px" height="70px" alt="Logo"></a>
-            <span class="menu-toggle" onclick="toggleMenu()">&#9776;</span>
+            <span class="menu-toggle" id="mobile-menu">☰</span>
             <ul class="menu">
                 <li class="menu-item"><a href="packages.html">Destinations</a></li>
-                <li class="menu-item"><a href="#about">Food and Culinary</a></li>
+                <li class="menu-item"><a href="food.html">Food and Culinary</a></li>
                 <li class="menu-item">
                     <a href="main.html">Adventures</a>
                     <div class="dropdown">
@@ -37,20 +37,20 @@
     </section>
     <div class="services">
         <h1>Our Services</h1>
-        <div style="display: flex;">
-            <div class="tickets">
+        <div class="tickets-hotels" style="display: flex;">
+            <div class="tickets" id="plane">
                 <img src="airplane-ticket (1).png" alt="" width="32px" height="32px">
                 <h2>Tickets</h2>
                 <p>We book all kind of national or international
                     ticket for your destinaion.</p>
             </div>
-            <div class="hotel">
+            <div class="hotel" id="hotel">
                 <img src="booking.png" alt="" width="32px" height="32px">
                 <h2>Hotel Booking</h2>
                 <p>You can easily book your according to your
                     budget hotel by our website.s</p>
             </div>
-            <div class="tickets">
+            <div class="tickets" id="tickets">
                 <img src="tourism.png" alt="" width="32px" height="32px">
                 <h2>Tour Plan</h2>
                 <p>We provide you the best plan within a short
@@ -96,23 +96,23 @@
          <img class="world-pic" src="world-bg.png">
             <div class="destinations">
                 <div class="destination">
-                    <img src="lalibela.jpg" class="dest-pic">
+                    <img src="lalibela.png" class="destination-pic">
                     <div class="name-of-pop-des">
-                        <h3 style="font-weight: 200; margin-bottom: -10px;">Lalibela</h3>
+                        <h3 style="font-weight: 200; margin-bottom: -10px;">Thailand</h3>
                         <h4>20+ Spots</h4>
                     </div>
                     <img src="next.png" class="next">
                 </div>
                 <div class="destination">
-                    <img src="konso.jpg" class="dest-pic">
+                    <img src="greece.png" class="destination-pic">
                     <div class="name-of-pop-des">
-                        <h3 style="font-weight: 200; margin-bottom: -10px;">Konso</h3>
+                        <h3 style="font-weight: 200; margin-bottom: -10px;">Greece</h3>
                         <h4>16+ Spots</h4>
                     </div>
                     <img src="next.png" class="next">
                 </div>
                 <div class="destination">
-                    <img src="sofumar.jpg" class="dest-pic">
+                    <img src="https://i.pinimg.com/564x/23/00/45/2300453aab5865f6152b806533557376.jpg" class="destination-pic">
                     <div class="name-of-pop-des">
                         <h3 style="font-weight: 200; margin-bottom: -10px;">Sof umer</h3>
                         <h4>12+ Spots</h4>
@@ -132,6 +132,21 @@
         </div>
         <p>&copy; 2024 Your Company</p>
     </div>
+
+
+    <script>
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menu = document.querySelector('.menu');
+    const anything = document.getElementsByClassName('main-section-heading')[0];
+
+    mobileMenu.addEventListener('click', () => {
+        menu.classList.toggle('menu-active');
+    
+    });
+
+
+</script>
+
     
 </body>
 </html>

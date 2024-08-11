@@ -1,8 +1,23 @@
+
+@keyframes reveal {
+    0% {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 body {
     top: 0;
     left: 0;
     margin: 0;
     padding: 0;
+    font-family: "Open-Sans", sans-serif;
+    animation: reveal 1s ease-in-out forwards;
+    opacity: 0;
+    transform: translateY(50px);
 }
 
 .main-section {
@@ -16,7 +31,7 @@ body {
     filter: brightness(3);
 }
 .main-section-heading {
-    font-family: "Noto Serif", serif;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     font-optical-sizing: auto;
     font-style: normal;
     color: white;
@@ -159,32 +174,41 @@ body {
     height: 500px;
 }
 .world-pic {
-    width: 62%;
+    width: 58%;
     margin-right: -1%;
 }
 .destinations {
-    width: 38%;
+    width: 40%;
     align-self: center;
 }
 .destination {
     box-shadow: 1px 2px 21px -9px rgba(190, 182, 182, 0.84);
     -webkit-box-shadow: 1px 2px 21px -9px rgba(163, 153, 153, 0.811);
     -moz-box-shadow: 1px 2px 21px -9px rgba(68, 59, 59, 0.804);
-    width: 73%;
+    width: 70%;
     border-radius: 15px;
-    height: 130px;
+    height: 140px;
     margin-bottom: 30px;
     display: flex;
+    transition: 0.3s;
 }
-.des-pic {
-    width: 40%;
+.destination:hover {
+    transform: translateY(-10px);
+}
+.destination-pic {
+    width: 34%;
     height: 100%;
-    border-radius: 15px 0 0 15px;
+    border-radius: 25px 0 0 15px;
 }
 .name-of-pop-des {
-    margin-left: 50px;
+    margin-left: 10%;
     margin-top: 10px;
+    font-size: 17px;
 }
+.name-of-pop-des h4 {
+    font-size: 15px;
+}
+
 .next {
     width: 20px;
     height: 15px;
@@ -218,4 +242,166 @@ body {
 .footer p {
     margin: 0;
     font-size: 14px;
+}
+
+@media (max-width: 600px) {
+
+    .navbar {
+
+    }
+    .logo {
+        display: none;
+    }
+
+    .menu {
+        flex-direction: column;
+        width: 100%;
+        background-color: #000000;
+        display: none;
+        z-index: 999;
+        color: #ffffff;
+    }
+
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+        margin: auto;
+        color: white;
+    }
+    .menu-active {
+        display: flex;
+        animation: slideDown 0.3s ease-out forwards;
+    }
+
+    .menu-item {
+        width: 100%;
+        text-align: center;
+    }
+    .menu-item a:hover {
+        background-color: transparent;
+    }
+    .menu-item .dropdown a:hover {
+        background-color: transparent;
+    }
+
+    .menu-item .dropdown {
+        position: relative;
+        width: 100%;
+        text-align: left;
+        display: none;
+    }
+
+    .menu-item:hover .dropdown {
+        display: block;
+    }
+
+
+
+    .packages {
+        width: 80%;
+        margin-top: 20px;
+    }
+
+    .tickets-hotels {
+        flex-direction: column;
+    }
+
+    .services {
+        width: 100%;
+        flex-direction: column;
+    }
+    #plane {
+        width: 80%;
+        margin: auto;
+        margin-bottom: 2%;
+        height: 25vh;
+    }
+    #plane h2 {
+        font-size: 15px;
+    }
+    #plane p {
+        font-size: 12px;
+    }
+    #hotel {
+        width: 80%;
+        margin: auto;
+        margin-bottom: 2%;
+    }
+
+    #hotel h2 {
+        font-size: 15px;
+    }
+    #hotel p {
+        font-size: 12px;
+    }
+    #tickets {
+        width: 80%;
+        margin: auto;
+    }
+    #tickets h2 {
+        font-size: 15px;
+    }
+    #tickets p {
+        font-size: 12px;
+    }
+    .service2 {
+        height: 230vh;
+    }
+    .service2 h1 {
+        font-size: 18px;
+    }
+    .service2 p {
+        font-size: 13px;
+        width: 80%;
+        margin: auto;
+    }
+    .overlay {
+        height: 216vh;
+    }
+    .achievments {
+        flex-direction: column;
+    }
+
+
+    .popular-destinations {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .world-pic {
+        display: none;
+    }
+
+
+
+    .destination {
+        width: 100%;
+        margin-bottom: 3%;
+        margin: auto;
+        height: 25vh;
+    }
+    .destination h3 {
+        font-size: 15px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+    }
+    .main-section {
+        height: 90vh;
+    }
+    .main-section-heading h1 {
+        font-size: 20px;
+    }
+    .main-section-heading cite {
+        font-size: 18px;
+    }
+    .main-section-heading button {
+        width: 80%;
+        margin: auto;
+    }
+    .destinations {
+        width: 100%;
+    }
 }
