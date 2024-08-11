@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="secondthoughts.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>mine</title>
+</head>
+<body>
+    <section class="section">
+    <div class="navbar">
+        <a href="#" class="logo"><img src="image-removebg-preview.png" width="100px" height="70px" alt="Logo"></a>
+        <span class="menu-toggle" onclick="toggleMenu()">&#9776;</span>
+        <ul class="menu">
+            <li class="menu-item"><a href="#home">Destinations</a></li>
+            <li class="menu-item"><a href="#about">Food and Culinary</a></li>
+            <li class="menu-item">
+                <a href="#services">Adventures</a>
+                <div class="dropdown">
+                    <a href="#health">Health, Spa and Wellness</a>
+                    <a href="#river">River Cruise</a>
+                    <a href="#festivals">Festivals and Events</a>
+                </div>
+            </li>
+            
+            <li class="menu-item"><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+
+    <div class="search-bar">
+        <div class="tobedisplayed">
+            <i class="fas fa-map-marker-alt"></i>
+            <input type="text" placeholder="Where to?">
+        </div>
+        <div  class="tobehidden">
+            <i class="fas fa-calendar-alt"></i>
+            <input type="date" id="when" placeholder="When?">
+        </div>
+        <div  class="tobehidden">
+            <i class="fas fa-users"></i>
+            <input type="text" id="adv" placeholder="All adventures">
+        </div>
+        <button>Search</button>
+    </div>
+
+    <div class="main-img-div">
+
+        <div class="slide1">
+        <img class="main-img" src="dV2Zdn.jpg">
+        <h2>Book the Best Tours & River Cruises</h2>
+        <p>Choose from thousands of Organized Adventures</p>
+    </div>
+    
+      <!--  <div class="slide2">
+            <img class="main-img2" src="https://cdn.tourradar.com/s3/tour/720x480/124753_fdf3784b.jpg">
+            <h2>Explore the Wonders of the World</h2>
+            <p>Embark on unforgettable journeys with our curated tours</p>
+        </div>
+        -->
+    
+        <i class="fas fa-chevron-left prev"></i>
+        <i class="fas fa-chevron-right next"></i>
+    </div>
+    
+
+    <div class="travel-hack">
+        <div class="travel-hack-info">
+        <h1>Discover Organized Adventures: The Ultimate Travel Hack</h1>
+        <p>At TourRadar, we believe adventure is the ultimate life-enriching experience that enables you to explore our world in new ways. And all you have to do is show up—because we found the ultimate travel hack:
+            Organized adventures. Take the stress out of travel and live your best life!</p>
+            </div>
+
+            <div class="video">
+                <img width="436" height="307" src="ill1.png" title="Organized Adventures: The Ultimate Travel Hack by TourRadar">
+            </div>
+    </div>
+
+    <div class="sustainable">
+        <div style="margin-left: 2%;">
+            <h4>Sustainable Travel</h4>
+            <p>Adventure sustainably with TourRadar. We are committed to conscious travel, from responsible operators to our Climate Action Plan and carbon measurements.</p>
+        </div>
+            <img src="https://th.bing.com/th/id/OIP.oKaQrF2BczRX8ymwQZMyUAHaHa?w=626&h=626&rs=1&pid=ImgDetMain" width="170px" height="150px">
+        <div>
+            <h4>Peace of Mind</h4>
+            <p>With 24/7 customer service, flexible booking conditions and extensive insurance options, we are there for you when plans change.</p>
+        </div>
+       <img src="peace.png" alt="peace" width="150px" height="150px">
+    </div>
+
+</section>
+
+    <div class="sptlt">
+    <div class="spotlight">
+        <h2>EthioTours Spotlight</h2>
+        <p>Find out what’s happening at EthioTours—from the latest travel news to our special offers.</p>
+        <div class="spotlights">
+            <div class="spotlight-deals">
+                <img src="week-deal.png">
+                <h3>Deals of the Week</h3>
+                <p>Join an epic cruise on the majestic Nile,
+                     explore the rich mysteries of the Pharaohs
+                      and Cairo's bustling bazaars—no bartering needed,
+                       you've already got up to 50% off!
+                </p>
+            </div>
+
+            <div class="spotlight-guide">
+                <img src="data:image/jpeg;base64,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">
+                <h3>Deals of the Week</h3>
+                <p>J9 Days Omo Valley and Danakil Danakil Depression tour
+                    9 days <br>Private group
+                    New activity
+                    From
+                    €3,600.00
+                    per group up to 2
+                </p>
+            </div>
+
+            <div class="spotlight-climate">
+                <img src="https://cdn.tourradar.com/s3/content-pages/391/424x202/pFVse1.jpg">
+                <h3>Our Climate Action Plan</h3>
+                <p>  We aim to develop an impact measurement tool
+                     to simplify carbon measurement and reporting.
+                      We also set a goal for all operators to have
+                       sustainability plans by 2030.
+                    
+                </p>
+            </div>
+
+            <div class="spotlight-travel-info">
+                <div class="sti">
+                    <div class="icon"><img src="insurance.png" alt=""></div>
+                    <p>Travel Insurance</p>
+                </div>
+
+                <div class="sti">
+                    <div class="icon"><img src="insurance.png" alt=""></div>
+                    <p>Travel Insurance</p>
+                </div>
+
+                <div class="sti">
+                    <div class="icon"><img src="insurance.png" alt=""></div>
+                    <p>Travel Insurance</p>
+                </div>
+            </div>
+        
+        </div>
+    </div>
+</div>
+
+    <div class="inspirations">
+
+    </div>
+
+    <div class="newsletter">
+        <div>
+        <h2>Sign up for Our Newsletter</h2>
+        <p>Save up to 50% on tours! Get exclusive access to members only deals by email.
+        </p>
+    </div>
+    <div>
+        <div style="display: flex;">
+        <input type="text" placeholder="Your Email">
+        <input type="submit" value="Subscribe">
+    </div>
+        <p>By submitting this form, I agree to the TourRadar T&Cs and Privacy policy.</p>
+    </div>
+    </div>
+
+
+    <div class="divs">
+        <div class="top-destinations">
+            <p>Japan</p>
+            <p>New Zealand</p>
+            <p>Philippines</p>
+            <p></p>
+        </div>
+
+        <div class="top-operators">
+            <p>Japan</p>
+            <p>New Zealand</p>
+            <p>Philippines</p>
+            <p></p>
+        </div>
+
+        <div class="top-styles">
+            <p>Japan</p>
+            <p>New Zealand</p>
+            <p>Philippines</p>
+            <p></p>
+        </div>
+    </div>
+
+
+    <div class="last">
+        <div>Company</div>
+    </div>
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const menu = document.querySelector('.menu');
+
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            menu.classList.toggle('active');
+        });
+
+        const mainImgDiv = document.querySelector('.main-img-div');
+const mainImg = document.querySelector('.main-img');
+const mainImg2 = document.querySelector('.main-img-div2');
+const prev = document.querySelector('.prev');
+const next = document.querySelector('.next');
+
+let currentSlide = 1;
+
+function showSlide(n) {
+    if (n === 1) {
+        mainImg.style.transform = 'translateX(0)';
+        mainImg2.style.transform = 'translateX(100%)';
+        mainImg2.style.display = 'none';
+    } else if (n === 2) {
+        mainImg.style.transform = 'translateX(-100%)';
+        mainImg2.style.transform = 'translateX(0)';
+        mainImg2.style.display = 'block';
+    }
+}
+
+next.addEventListener('click', () => {
+    currentSlide = currentSlide === 1 ? 2 : 1;
+    showSlide(currentSlide);
+});
+
+prev.addEventListener('click', () => {
+    currentSlide = currentSlide === 1 ? 2 : 1;
+    showSlide(currentSlide);
+});
+
+showSlide(currentSlide);
+
+    </script>
+</body>
+</html>
