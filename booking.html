@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour Booking Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+            background-image: url('login.bg.jfif');
+            background-size: cover;
+        }
+
+        .booking {
+            width: 100%;
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #ffffff92;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: space-around;
+            background-color: #4CAF50;
+            border-radius: 5px 5px 0 0;
+        }
+
+        .tab-link {
+            flex-grow: 1;
+            text-align: center;
+            padding: 15px;
+            background-color: #4CAF50;
+            color: #ffffff;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .tab-link.active,
+        .tab-link:hover {
+            background-color: #2E7D32;
+        }
+
+        .heading {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 24px;
+            color: #333333;
+        }
+
+        .form-container {
+            padding: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            color: #333333;
+            margin-bottom: 5px;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .form-group input[type="submit"] {
+            background-color: #4CAF50;
+            color: #ffffff;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .form-group input[type="submit"]:hover {
+            background-color: #2E7D32;
+        }
+
+        .error {
+            color: red;
+            font-size: 12px;
+        }
+
+        .paymentSection, .confirmationMessage {
+            margin-top: 20px;
+            display: none;
+        }
+
+        .option {
+            padding: 10px;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+            margin: 10px 0;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .option.selected {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        #payButton {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+    <section class="booking" id="booking">
+        <div class="tabs">
+            <button class="tab-link active">Tours</button>
+        </div>
+        <h1 class="heading">BOOK YOUR TOUR</h1>
+        <div class="form-container">
+            <form id="bookingForm">
+                <div class="form-group">
+                    <label for="firstName">Name *</label>
+                    <input type="text" id="firstName" placeholder="Name" required>
+                    <span class="error" id="firstNameError"></span>
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail *</label>
+                    <input type="email" id="email" placeholder="wanderWaves@gmail.com" required>
+                    <span class="error" id="emailError"></span>
+                </div>
+                <div class="form-group">
+                    <label for="tour">Select Tour *</label>
+                    <select id="tour" required>
+                        <option value="Paris">Paris</option>
+                        <option value="New York">Argentina</option>
+                        <option value="Australia">Australia</option>
+                        <option value="Greece">Greece</option>
+                        <option value="England">England</option>
+                        <option value="Thailand">Thailand</option>
+                        <option value="America">America</option>
+                        <option value="Brazil">Brazil</option>
+                    </select>
+                    <span class="error" id="tourError"></span>
+                </div>
+                <div class="form-group">
+                    <label for="departure">Departure On *</label>
+                    <input type="date" id="departure" required>
+                    <span class="error" id="departureError"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Next" class="btn">
+                </div>
+            </form>
+        </div>
+
+        <div id="paymentSection" class="paymentSection">
+            <h2>Select Your Payment Method</h2>
+            <div id="paymentOptions">
+                <div class="option" data-payment="Credit Card">Credit Card</div>
+                <div class="option" data-payment="PayPal">PayPal</div>
+                <div class="option" data-payment="Bank Transfer">Bank Transfer</div>
+            </div>
+
+            <div id="passwordSection" class="passwordSection">
+                <label for="password">Enter Password *</label>
+                <input type="password" id="password" required>
+                <span class="error" id="passwordError"></span>
+            </div>
+
+            <button id="payButton">Pay</button>
+        </div>
+
+        <div id="confirmationMessage" class="confirmationMessage">
+            <h2>Payment Successful!</h2>
+            <p>Your tour booking has been confirmed. Have a great trip!</p>
+        </div>
+    </section>
+
+    <script>
+        document.getElementById('bookingForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            let isValid = true;
+
+            const firstName = document.getElementById('firstName').value;
+            const email = document.getElementById('email').value;
+            const tour = document.getElementById('tour').value;
+            const departure = document.getElementById('departure').value;
+
+            document.getElementById('firstNameError').textContent = '';
+            document.getElementById('emailError').textContent = '';
+            document.getElementById('tourError').textContent = '';
+            document.getElementById('departureError').textContent = '';
+
+            if (!firstName) {
+                document.getElementById('firstNameError').textContent = 'First name is required.';
+                isValid = false;
+            }
+
+            if (!email) {
+                document.getElementById('emailError').textContent = 'Email is required.';
+                isValid = false;
+            }
+
+            if (!tour) {
+                document.getElementById('tourError').textContent = 'Please select a tour.';
+                isValid = false;
+            }
+
+            if (!departure) {
+                document.getElementById('departureError').textContent = 'Please select a departure date.';
+                isValid = false;
+            }
+
+            if (isValid) {
+                document.getElementById('paymentSection').style.display = 'block';
+            }
+        });
+
+        const paymentOptions = document.querySelectorAll('#paymentOptions .option');
+        let selectedPayment = null;
+
+        paymentOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                paymentOptions.forEach(opt => opt.classList.remove('selected'));
+                this.classList.add('selected');
+                selectedPayment = this.dataset.payment;
+                document.getElementById('passwordSection').style.display = 'block';
+                checkEnablePayButton();
+            });
+        });
+
+        document.getElementById('password').addEventListener('input', function() {
+            checkEnablePayButton();
+        });
+
+        function checkEnablePayButton() {
+            const password = document.getElementById('password').value;
+            if (selectedPayment && password.length >= 6) {
+                document.getElementById('payButton').style.display = 'block';
+                document.getElementById('passwordError').textContent = '';
+            } else {
+                document.getElementById('payButton').style.display = 'none';
+                if (password.length < 6) {
+                    document.getElementById('passwordError').textContent = 'Password must be at least 6 characters.';
+                }
+            }
+        }
+
+        document.getElementById('payButton').addEventListener('click', function() {
+            if (selectedPayment) {
+                document.getElementById('confirmationMessage').style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>

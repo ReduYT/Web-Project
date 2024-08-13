@@ -37,7 +37,17 @@ body {
     width: 100%; height: 700px;
     background-size:cover;
     border-bottom: px solid red;
-    
+}
+.login-logo {
+    width:40px;
+    height: 40px;
+    margin-left: -15%; 
+    margin-right: 5%;
+}
+.login-logo:hover {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
 }
 .spotlights {
     display: flex;
@@ -58,6 +68,7 @@ body {
     margin-right: 4%;
     margin-left: -6%;
 }
+
 .ratings {
     height: 360px;
     width: 300px;
@@ -139,12 +150,10 @@ body {
 .featured-best {
     width: 150px;
     height: 150px;
+    margin: auto;
 }
 .featured-best img {
     width: 100%;
-}
-.featured-best:nth-child(2) {
-    margin-left: 5%;
 }
 .wine {
     width: 75%;
@@ -220,4 +229,103 @@ body {
 .country-food img {
     width: 80%;
     height: 75%;
+}
+.active-menu {
+    display: flex;
+}
+
+@media (max-width:600px) {
+    .menu {
+        flex-direction: column;
+        width: 100%;
+        background-color: #000000;
+        display: none;
+        z-index: 999;
+        color: #ffffff;
+    }
+    .menu-active {
+        display: flex;
+    }
+    .main h1 {
+        font-size: 35px;
+        margin-top: 20%;
+    }
+    .main {
+        height: 90vh;
+    }
+    .spotlights {
+        margin-top: 110vh;
+        width: 95%;
+        flex-direction: column;
+    }
+    .spotlight {
+        margin: auto;
+    }
+    .spotlight h1 {
+        font-size: 15x;
+        text-align: center;
+    }
+    .spotlight p {
+        font-size: 15px;
+        text-align: center;
+    }
+    .foods {
+        flex-direction: column;
+        margin-top: 10vh;
+    }
+    .ratings {
+        margin-bottom: 10vh;
+    }
+    .wine {
+        margin: 110vh auto 0 auto;
+        width: 95%;
+    }
+
+    .wine-content {
+        width: 95%;
+    }
+    .wine-content h2 {
+        font-size: 20px;
+    }
+    .wine-content p {
+        font-size: 15px;
+    }
+    .book, .know {
+        margin: 5% auto;
+    }
+    .exp-img {
+        height: 50vh;
+    }
+    .exp-img h2 {
+        font-size: 20px;
+        top: 31%;
+        left: 12%;
+    }
+    .img2n3 {
+        flex-direction: column;
+    }
+
+    .exp-img2 {
+        height: 50vh;
+        width: 76%;
+    }
+    .exp-img2 h2 {
+        font-size: 20px;
+        top: 31%;
+        left: 26%;
+    }
+    .exp-img2:nth-child(2)
+    {
+        margin: auto;
+    }
+    .countries {
+        flex-direction: column;
+    }
+    .country-food {
+        width: 85%;
+        margin: auto;
+        margin-bottom: 5vh;
+    }
+
+
 }

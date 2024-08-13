@@ -16,7 +16,7 @@
         <div class="mini-main">
             <div class="navbar">
                 <a href="secondthoughts.html" class="logo"><img src="image-removebg-preview.png" width="100px" height="70px" alt="Logo"></a>
-                <span class="menu-toggle" onclick="toggleMenu()">&#9776;</span>
+                <span class="menu-toggle">&#9776;</span>
                 <ul class="menu">
                     <li class="menu-item"><a href="packages.html">Destinations</a></li>
                     <li class="menu-item"><a href="#about">Food and Culinary</a></li>
@@ -29,8 +29,9 @@
                         </div>
                     </li>
                     
-                    <li class="menu-item"><a href="#contact">Contact</a></li>
+                    <li class="menu-item"><a href="contact.html">Contact</a></li>
                 </ul>
+                <img src="user-interface.png" class="login-logo" onclick="window.location.href='login.html'">
             </div>
             <h1>It's not just food.<br> It's experience.</h1>
             <hr style="color: white; width: 20%; margin-left: 5%; height: 2px; background-color: white;">
@@ -43,7 +44,7 @@
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, explicabo. Fuga similique consequuntur illum eligendi neque pariatur nisi illo numquam! Iste beatae aspernatur fuga odit temporibus eaque repellat impedit recusandae.</p>
         <img src="world-bg.png" style="width: 80%; height: 29%;">
     </div>
-    <div style="display: flex; justify-content: space-around;">
+    <div class="foods" style="display: flex; justify-content: space-around;">
         <div class="ratings">
             <img src="https://th.bing.com/th/id/R.688a8cc444d8712a8bbd6b328623443e?rik=ORJS7%2bHBB178cg&pid=ImgRaw&r=0">
             <div>
@@ -105,7 +106,7 @@
     </div>
 
 
-    <div style="display: flex;">
+    <div style="display: flex;" class="img2n3">
     <div class="exp-img2">
         <img src="https://th.bing.com/th/id/OIP.xCubvpZILAhbszmVr6lH1AHaFR?w=800&h=569&rs=1&pid=ImgDetMain" alt="">
         <h2>Regular Tour</h2>
@@ -134,6 +135,17 @@
 </div>
 </div>
 
+
+<script>
+    const menuToggle = document.querySelector('.menu-toggle');
+        const menu = document.querySelector('.menu');
+
+        menuToggle.addEventListener('click', () => {
+            menu.classList.toggle('menu-active');
+        });
+
+
+</script>
 
 </body>
 </html>

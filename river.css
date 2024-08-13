@@ -1,7 +1,4 @@
-.river {
-    background-color: rgba(220, 240, 234, 0.215);
-    font-family: 'Open-Sans', sans-serif;
-}
+
 .river-cruises {
     max-width: 1200px;
     margin: 30px auto;
@@ -11,6 +8,7 @@
     border-radius: 10px;
 }
 
+/* Heading Styles */
 .river-cruises h1 {
     text-align: center;
     color: #a2d3f6;
@@ -19,6 +17,23 @@
     text-transform: uppercase;
 }
 
+.river-section h2 {
+    color: #333;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    font-size: 28px;
+    text-align: center;
+}
+
+.destination2 h3,
+.itinerary h3,
+.ship h3,
+.promotion h3 {
+    color: #333;
+    font-size: 24px;
+}
+
+/* Sections Container */
 .sections-container {
     display: flex;
     flex-wrap: wrap;
@@ -34,50 +49,44 @@
     margin-bottom: 40px;
 }
 
-
-.river-section h2 {
-    color: #333;
-    padding-bottom: 10px;
-    margin-bottom: 30px;
-    font-size: 28px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
- #cruise-ships {
+/* Cruise Ships */
+#cruise-ships {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
 }
 
-.destination2, .itinerary, .ship, .promotion {
+/* Content Styles */
+.destination2,
+.itinerary,
+.ship,
+.promotion {
     margin-bottom: 20px;
     transition: transform 0.3s ease;
 }
 
-.destination2 h3, .itinerary h3, .ship h3, .promotion h3 {
-    color: #333;
-    font-size: 24px;
+#destinations, #itineraries {
+    border-radius: 6px;
+    border: 1px solid #a2d3f6;
+    margin: 10px;
 }
 
-.destination2 p, .itinerary p, .ship p, .promotion p {
-    color: #333;
-    margin: 10px auto;
-    line-height: 1.6;
-    font-size: 16px;
-}
-.destination2, .itinerary {
+.destination2,
+.itinerary {
     display: flex;
     flex-direction: column;
     width: 80%;
     text-align: center;
     gap: 10px;
+    margin: auto;
 }
-.destination2 {
-    margin-left: 8%;
+#destinations h2, #itineraries h2, .destination2 h3, .itinerary h3 {
+    color: #a2d3f6;
 }
 
+
+/* Ship Styles */
 .ship img {
     width: 50%;
     height: auto;

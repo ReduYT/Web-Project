@@ -15,7 +15,7 @@
             <a href="#" class="logo"><img src="image-removebg-preview.png" width="100px" height="70px" alt="Logo"></a>
             <span class="menu-toggle" id="mobile-menu">☰</span>
             <ul class="menu">
-                <li class="menu-item"><a href="packages.html">Destinations</a></li>
+                <li class="menu-item"><a href="destinations.html">Destinations</a></li>
                 <li class="menu-item"><a href="food.html">Food and Culinary</a></li>
                 <li class="menu-item">
                     <a href="main.html">Adventures</a>
@@ -28,6 +28,7 @@
                 
                 <li class="menu-item"><a href="#contact">Contact</a></li>
             </ul>
+            <img src="user-interface.png" class="login-logo" onclick="window.location.href='login.html'">
         </div>
         <div class="main-section-heading">
             <h1>Discover breathtaking destinations and unforgettable experiences.</h1>
@@ -122,6 +123,75 @@
             </div>
             </div>
     </div>
+
+    <div class="tour-packages-section">
+        <h2 class="section-title">Our Trending Tour Packages</h2>
+        <div class="tour-cards">
+            <div class="tour-card">
+                <img src="https://i.pinimg.com/564x/0a/b9/b2/0ab9b290c229ed9eb4dd5f05dcb3a929.jpg" alt="Brazil" class="tour-image">
+                <div class="tour-info">
+                    <div class="tour-country">
+                    </div>
+                    <div class="tour-details">
+                        <p>10 Days</p>
+                        <p>30 People Going</p>
+                    </div>
+                    <h3>Brazil</h3>
+                    <p class="tour-location">South America</p>
+                    <p class="tour-price">
+                        <span class="current-price">$1,500</span>
+                        <span class="old-price">$1,800</span>
+                    </p>
+                    <p class="tour-rating">★★★★★</p>
+                    <p class="tour-description">Experience the vibrant culture and stunning landscapes of Brazil, from the Amazon rainforest to the bustling streets of Rio de Janeiro.</p>
+                    <button class="explore-btn">Explore Now</button>
+                </div>
+            </div>
+    
+            <div class="tour-card">
+                <img src="https://i.pinimg.com/564x/ca/1d/02/ca1d025accde6ea1a6d1323f6bcfbe6f.jpg" alt="Thailand" class="tour-image">
+                <div class="tour-info">
+                    <div class="tour-country">
+                    </div>
+                    <div class="tour-details">
+                        <p>12 Days</p>
+                        <p>20 People Going</p>
+                    </div>
+                    <h3>Thailand</h3>
+                    <p class="tour-location">Asia</p>
+                    <p class="tour-price">
+                        <span class="current-price">$1,200</span>
+                        <span class="old-price">$1,500</span>
+                    </p>
+                    <p class="tour-rating">★★★★★</p>
+                    <p class="tour-description">Discover the rich history and beautiful beaches of Thailand, from the temples of Bangkok to the islands of Phuket.</p>
+                    <button class="explore-btn">Explore Now</button>
+                </div>
+            </div>
+    
+            <div class="tour-card">
+                <img src="https://i.pinimg.com/736x/a2/d6/39/a2d639e2c08cd49f7aba4ede1c435c06.jpg" alt="Australia" class="tour-image">
+                <div class="tour-info">
+                    <div class="tour-country">
+                    </div>
+                    <div class="tour-details">
+                        <p>15 Days</p>
+                        <p>18 People Going</p>
+                    </div>
+                    <h3>Australia</h3>
+                    <p class="tour-location">Oceania</p>
+                    <p class="tour-price">
+                        <span class="current-price">$2,000</span>
+                        <span class="old-price">$2,300</span>
+                    </p>
+                    <p class="tour-rating">★★★★★</p>
+                    <p class="tour-description">Explore the iconic landmarks and natural wonders of Australia, from the Great Barrier Reef to the Sydney Opera House.</p>
+                    <button class="explore-btn">Explore Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
     <div class="footer">
         <div class="footer-content">
             <a href="#home">Home</a>
@@ -137,7 +207,6 @@
     <script>
     const mobileMenu = document.getElementById('mobile-menu');
     const menu = document.querySelector('.menu');
-    const anything = document.getElementsByClassName('main-section-heading')[0];
 
     mobileMenu.addEventListener('click', () => {
         menu.classList.toggle('menu-active');

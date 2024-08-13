@@ -1,0 +1,126 @@
+body {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+.image {
+    width: 100%;
+    background-image: url("login.bg.jfif");
+    background-size: cover;
+    height: 100vh;
+}
+.login {
+    margin: 4% auto 0 auto;
+    height: 69%;
+    width: 45%;
+    background-color: rgba(255,255,255,0.5);
+    border-radius: 2%;
+}
+.login h2 {
+    text-align: center;
+    font-family: "Inter", sans-serif;
+    padding-top: 5%;
+    margin-left: -3%;
+    font-size: 2rem;
+    color: #0c3d30;
+}
+.login p {
+    color: #383f3d;
+    font-size: .78rem;
+    text-align: center;
+    font-family: "Inter", sans-serif;
+}
+form
+{
+    padding-left: 26%;
+    padding-top: 3%;
+}
+label {
+    color: #0c3d30;
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+}
+input[type="text"], input[type="password"] {
+    width: 65%;
+    height: 5vh;
+    border: 1px solid rgb(215, 215, 215);
+    border-radius: 14px;
+    margin: 2% 0 4% 0;
+}
+input[type="text"]:active, input[type="password"]:active {
+    border: none;
+}
+input[type="submit"] {
+    width: 65%;
+    height: 5vh;
+    border: none;
+    border-radius: 14px; 
+    background-color: #2ce6b4;
+    color: white;
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+} 
+.problem {
+    display: flex;
+    justify-content: space-around;
+    margin: auto 16%;
+}
+
+.new {
+    display: flex;
+    width: 45%;
+    height: 5vh;
+    align-items: center;
+    margin: 1% auto;
+    color: #ffffff;
+    font-size: 1.1rem;
+    text-align: center;
+    font-family: "Open-Sans", sans-serif;
+    justify-content: center;
+}
+hr {
+    width: 19%;
+    height: .01rem;
+    background-color: white;
+}
+
+.create {
+    width: 45%;
+    height: 5vh;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+.create button {
+    width: 65%;
+    height: 5vh;
+    border: none;
+    border-radius: 14px; 
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+}
+.create button:hover {
+    color: #06c592;
+    border: 2px solid #06c592;
+    background-color: transparent;
+}
+
+
+@media(max-width:600px) {
+    .login {
+        width: 100%;
+        height: 90%;
+    }
+    label {
+        font-size: 14px;
+        margin-left: -15%;
+    }
+    input[type="text"], input[type="password"] {
+        width: 90%;
+        margin-left: -15%;
+    }
+    .problem {
+        flex-direction: column;
+    }
+}

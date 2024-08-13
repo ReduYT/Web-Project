@@ -24,8 +24,6 @@ body {
     opacity: 0;
     transform: translateY(50px);
 }
-.slide1 img {
-}
 .navbar {
     margin: 0px;
     display: flex;
@@ -131,10 +129,10 @@ body {
     font-size: 17px;
     margin-right: 10px;
     height: 60px;
-    border: none; 
     width: 100%;
     border-radius: 20px;
     background-color: rgba(224, 255, 246, 0.353);
+    border: none; 
 }
 .search-bar input::placeholder {
     color: #333;
@@ -150,8 +148,7 @@ body {
     justify-content: center;
     margin: auto;
     margin-top: 80px;
-    overflow: hidden;
-    margin-left: 6%;
+    margin-left: 3%;
     color: #fff;
 }
 .slide1 {
@@ -169,7 +166,7 @@ body {
 }
 .slide1 h2 {
     font-family: 'huova';
-    top: 50%;
+    top: 45%;
     left: 7%;
     position: absolute;
     font-size: 40px;
@@ -182,7 +179,6 @@ body {
     top: 64%;
     font-size: 16px;
     position: absolute;
-    z-index: 1;
     color: #fff;
     margin-left: 7%;
     left: 8%;
@@ -221,19 +217,49 @@ body {
     font-size: 17px;
     height: 320px;
 }
+.sustainable2-text {
+    width: 49%;
+    margin-left: 5%;
+}
+.sustainable img {
+    width: 50%;
+}
+
+.sustainable2 {
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    line-height: 1.5;
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 200px;
+    margin: 100px 80px 100px 80px;
+    align-items: center;
+    color: #333;
+    font-size: 17px;
+    height: 320px;
+}
 .sustainable h, .sustainable p {
-    width: 90%;
-    
+    width: 90%;  
 }
 .sustainable img {
     margin-right:10% ;
+}
 
+.sustainable2 h, .sustainable2 p {
+    width: 90%;  
+}
+.sustainable2 img {
+    margin-right:10% ;
+    width: 37%;
+    height: 100%;
+    margin-left: 18%;
 }
 .spotlight {
-    margin: 0 80px;
+    margin: 0 auto;
     width: 95%;
     color: #333;
     font-family: Georgia, 'Times New Roman', Times, serif;
+    justify-content: space-around;
 }
 
 .spotlights p {
@@ -243,15 +269,14 @@ body {
     display: flex;
     margin-top: 60px;
     color: #333;
-
-
+    justify-content: space-around;
+    margin: auto;
 }
 .spotlight-deals, .spotlight-guide, .spotlight-climate {
     display: flex;
     flex-direction: column;
-    width: 21%;
-    height: 400px;
-    margin-right: 30px;
+    width: 27%;
+    height: 450px;
     border-radius: 17px;
     box-shadow: 1px 2px 21px -9px rgba(190, 182, 182, 0.75);
     -webkit-box-shadow: 1px 2px 21px -9px rgba(163, 153, 153, 0.75);
@@ -338,7 +363,7 @@ body {
     background-color: #b2b2b2;
     height: 200px;
 }
- /*
+ 
 .heading{
     text-align: center;
     padding: 2.5rem;
@@ -404,12 +429,26 @@ body {
     border: 1px solid #ccc;
     border-radius: 5px;
 }
-    */
+    
+.login-logo {
+    width:40px;
+    height: 40px;
+    margin-left: -15%; 
+    margin-right: 5%;
+}
+.login-logo:hover {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
 .offers{
     width: 80%;   
     padding: 7rem 0;
+    background-image: url('https://th.bing.com/th/id/R.e4e188f262a5ee8858a866e2e6e0197d?rik=vlxwUZTKOu6kRA&pid=ImgRaw&r=0');
 }
-
+.section-title h1, .section-title h2 {
+    color: white;
+}
  .card {
     width: 13.5%;
     height: 150px; 
@@ -436,7 +475,6 @@ body {
     .card:hover {
         background-image: url('face.jpg');
         color: white;
-    
     }
 
     .card:nth-child(2):hover {
@@ -461,6 +499,7 @@ body {
 
     .card-items {
         margin-top: 20px;
+        color: white;
     }
 
     .item {
@@ -475,7 +514,7 @@ body {
         margin-right: 10px;
     }
     .offers {
-        background-image: url('bg.jpg');
+        background-image: url('https://secure.s.forbestravelguide.com/img/properties/the-spa-at-the-joule/spa-at-the-joule-pool-and-loungers.jpg');
         background-position: center;
         background-repeat: no-repeat; 
         background-size: cover; 
@@ -535,4 +574,197 @@ body {
     background-color: rgb(58, 58, 115);
     height: 42px;
     border-radius: 0 4px 4px 0;
+}
+
+
+
+@media (max-width: 600px) {
+    .section {
+        height:auto;
+    }
+    .section p {
+        font-size: 13px;
+    }
+    .search-bar {
+        width: 80%;
+        height: 10vh;
+        margin-top: 10vh;
+    }
+    .search-bar button {
+        padding: 1px 2px;
+        border-radius: 30px;
+        cursor: pointer;
+        width: 30%;
+        font-size: 16px;
+        height: 90%;
+    }
+    .main-img-div h2 {
+        font-size: 16px;
+        top: 30%;
+    }
+    .main-img-div p {
+        font-size: 12px;
+        top: 50%;
+    }
+    .travel-hack {
+        flex-direction: column;
+        width: 95%;
+        margin: auto;
+        margin-top: 10vh;
+    }
+    .video {
+        order: 0;
+    }
+    .travel-hack-info {
+        width: 100%;
+        order: 1;
+    }
+    .travel-hack-info h1 {
+        font-size: 18px;
+    }
+    .sustainable {
+        flex-direction: column;
+        width: 95%;
+        margin: auto;        
+    }
+    .sustainable h3, .sustainable p, .sustainable img {
+        width: 100%;
+    }
+    .sustainable2 {
+        flex-direction: column;
+        width: 95%;
+        margin: 20vh auto;
+    }
+
+    .sustainable2 img {
+        order: 0;
+        width: 100%;
+    }
+    .sustainable2-text {
+        order: 1;
+        width: 100%;
+        font-size: 13px;
+    }
+    .spotlight {
+        flex-direction: column;
+        width: 95%;
+    }
+    .spotlight h2, .spotlight p {
+        width: 100%;
+    }
+    .spotlight h2 {
+        font-size: 20px;
+    }
+
+    .spotlights {
+        flex-direction: column;
+    }
+    .spotlight-deals, .spotlight-climate, .spotlight-guide {
+        width: 100%;
+    }
+
+    .destination2, .itinerary {
+        align-self: center;
+        margin: auto;
+    }
+    .sections-container {
+        width: 100%;
+        margin: auto;
+        align-items: center;
+    }
+    .river-cruises {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        align-items: center;
+    }
+    .itinerary p, .itinerary h3 {
+        margin: auto;
+        width: 100%;
+        
+    }
+    .promotion {
+        width: 100%;
+    }
+    .section-title h1 {
+        font-size: 32px;
+    }
+    .section-title h2 {
+        font-size: 22px;
+    }
+    .offers {
+        height: 180vh;
+    }
+    .offer-cards {
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .card-items {
+        display: none;
+    }
+    .card {
+        margin: auto;
+        width: 80%;
+        opacity: 0.7;
+        margin-bottom: 10vh;
+    }
+    .card:hover {
+        opacity: 1;
+    }
+    .card:first-child {
+        background-image: url('face.jpg');
+        color: white;
+    
+    }
+
+    .card:nth-child(2) {
+        background-image: url('calm.jpg');
+        color: white;
+    }
+
+    .card:nth-child(3) {
+        background-image: url('couple.jpg');
+        color: white;
+    }
+
+    .card:nth-child(4) {
+        background-image: url('yoga.jpg');
+        color: white;
+    }
+    .newsletter {
+        font-size: 15px;
+        display: block;
+    }
+    .subscribe {
+        width: 85%;
+        margin: auto;
+    }
+    .menu {
+        flex-direction: column;
+        width: 100%;
+        background-color: #000000;
+        display: none;
+        z-index: 999;
+        color: #ffffff;
+    }
+    .menu-active {
+        display: flex;
+        transition: 0.3s ease-in-out;
+    }
+    .mini-img {
+        display: none;
+    }
+    .divs {
+        flex-direction: column;
+        width: 95%;
+    }
+    .top-destinations, .top-operators, .top-styles {
+        width: 100%;
+    }
+    .last {
+        width: 100%;
+    }
+
 }
