@@ -8,7 +8,6 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f7f7f7;
             margin: 0;
             padding: 0;
             background-image: url('login.bg.jfif');
@@ -16,47 +15,66 @@
         }
 
         .navbar {
-            background-color: #ffffffc7;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 20px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 10px 30px;
+            top: 0;
+            width: 100%;
+            z-index: 1000; 
         }
-
         .navbar a {
+            color: #042d28;
             text-decoration: none;
-            color: #333;
+            padding: 9px 30px;
+            margin-left: 10px;
             font-weight: bold;
-            margin: 0 15px;
         }
-
+        .logo img {
+            width: 100px;
+            height: 70px;
+        }
         .menu-toggle {
-            display: none;
             font-size: 24px;
             cursor: pointer;
+            display: none; 
         }
-
         .menu {
+            list-style-type: none;
             display: flex;
-            list-style: none;
-            margin: 0;
-            padding: 0;
+            gap: 10px;
         }
-
         .menu-item {
-            margin-left: 20px;
+            position: relative;
         }
-
         .menu-item a {
-            color: #333;
-            font-size: 16px;
-            padding: 10px;
-            transition: color 0.3s ease;
+            color: rgb(13, 72, 62);
+            text-decoration: none;
         }
-
-        .menu-item a:hover {
-            color: #083668;
+        .navbar a:hover {
+            background-color: #f0f0f0;
+            color: #333;
+            border-radius: 30px;
+            padding: 10px 30px;
+        }
+        .menu .dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #1c1a1a;
+            color: rgb(54, 49, 49);
+            box-shadow: 0 8px 16px rgba(255, 244, 244, 0.2);
+            z-index: 1;
+        }
+        .menu-item:hover .dropdown {
+            display: block;
+        }
+        .dropdown a {
+            padding: 10px;
+            display: block;
+            text-decoration: none;
+            color: #fffafa;
         }
 
         .login-logo {
@@ -65,7 +83,7 @@
         }
 
         .contact-section {
-            width: 100%;
+            width: 98%;
             max-width: 600px;
             margin: 50px auto;
             background-color: #ffffff92;
@@ -140,6 +158,7 @@
             display: flex;
             align-items: center;
             margin-bottom: 15px;
+            margin-left: 33%;
         }
 
         .contact-info .info-item i {
@@ -169,6 +188,9 @@
                 flex-direction: column;
                 display: none;
             }
+            .logo {
+                display: none;
+            }
 
             .menu.active {
                 display: flex;
@@ -181,16 +203,19 @@
             .menu-item {
                 margin: 10px 0;
             }
+            .contact-section, .container {
+                width: 95%;
+            }
         }
     </style>
 </head>
 <body>
     <div class="navbar">
-        <a href="#" class="logo"><img src="image-removebg-preview.png" width="100px" height="70px" alt="Logo"></a>
+        <a href="secondthoughts.html" class="logo"><img src="image-removebg-preview.png" width="100px" height="70px" alt="Logo"></a>
         <span class="menu-toggle" onclick="toggleMenu()">&#9776;</span>
         <ul class="menu">
-            <li class="menu-item"><a href="packages.html">Destinations</a></li>
-            <li class="menu-item"><a href="#about">Food and Culinary</a></li>
+            <li class="menu-item"><a href="destinations.html">Destinations</a></li>
+            <li class="menu-item"><a href="food.html">Food and Culinary</a></li>
             <li class="menu-item">
                 <a href="main.html">Adventures</a>
                 <div class="dropdown">
@@ -200,8 +225,8 @@
                 </div>
             </li>
             <li class="menu-item"><a href="#contact">Contact</a></li>
+        <img src="user-interface.png" class="login-logo menu-item" onclick="window.location.href='login.html'" width="40px" height="40px" style="margin-right: 30px;">
         </ul>
-        <img src="user-interface.png" class="login-logo" onclick="window.location.href='login.html'" width="40px" height="40px">
     </div>
 
     <section id="contact" class="contact-section">
