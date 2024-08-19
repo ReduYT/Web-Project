@@ -3,135 +3,166 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Link to external CSS file -->
     <link rel="stylesheet" href="secondthoughts.css">
+
+    <!-- Preconnect to Google Fonts for faster loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Link to Google Fonts for custom typography -->
     <link href="https://fonts.googleapis.com/css2?family=Chewy&family=Kiwi+Maru&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Playwrite+NG+Modern:wght@100..400&display=swap" rel="stylesheet">
-    <title>Document</title>
+
+    <!-- Page Title -->
+    <title>Ethio Tours | Discover Unforgettable Experiences</title>
 </head>
 <body>
+
+    <!-- Main section including navbar and hero content -->
     <section class="main-section">
+        
+        <!-- Navigation bar -->
         <div class="navbar">
+            
+            <!-- Logo with link to the homepage -->
             <a href="#" class="logo"><img src="image-removebg-preview.png" width="100px" height="70px" alt="Logo"></a>
+            
+            <!-- Hamburger menu icon for mobile view -->
             <span class="menu-toggle" id="mobile-menu">☰</span>
+
+            <!-- Main menu items -->
             <ul class="menu">
                 <li class="menu-item"><a href="destinations.html">Destinations</a></li>
                 <li class="menu-item"><a href="food.html">Food and Culinary</a></li>
                 <li class="menu-item">
                     <a href="main.html">Adventures</a>
+                    <!-- Dropdown menu under "Adventures" -->
                     <div class="dropdown">
                         <a id="health" href="#health">Health, Spa and Wellness</a>
                         <a id="river" href="#river">River Cruise</a>
                         <a id="festivals" href="#festivals">Festivals and Events</a>
                     </div>
                 </li>
-                
                 <li class="menu-item"><a href="#contact">Contact</a></li>
             </ul>
+
+            <!-- Login icon redirecting to the login page -->
             <img src="user-interface.png" class="login-logo" onclick="window.location.href='login.html'">
         </div>
+
+        <!-- Main heading and call-to-action button -->
         <div class="main-section-heading">
             <h1>Discover breathtaking destinations and unforgettable experiences.</h1>
             <cite>Ethio Tours</cite><br>
             <button class="packages">Check our Packages</button>
         </div>
     </section>
+
+    <!-- Services section -->
     <div class="services">
         <h1>Our Services</h1>
         <div class="tickets-hotels" style="display: flex;">
+            <!-- Ticket booking service -->
             <div class="tickets" id="plane">
-                <img src="airplane-ticket (1).png" alt="" width="32px" height="32px">
+                <img src="airplane-ticket (1).png" alt="Airplane Ticket Icon" width="32px" height="32px">
                 <h2>Tickets</h2>
-                <p>We book all kind of national or international
-                    ticket for your destinaion.</p>
+                <p>We book all kinds of national or international tickets for your destination.</p>
             </div>
+
+            <!-- Food tour booking service -->
             <div class="hotel" id="hotel">
-                <img src="booking.png" alt="" width="32px" height="32px">
+                <img src="booking.png" alt="Hotel Booking Icon" width="32px" height="32px">
                 <h2>Food Tour</h2>
-                <p>Book a food tour according to your preferences and budget through our website.
-                     Enjoy local cuisine and culinary experiences tailored to your taste.</p>
+                <p>Book a food tour according to your preferences and budget through our website. Enjoy local cuisine and culinary experiences tailored to your taste.</p>
             </div>
+
+            <!-- Tour planning service -->
             <div class="tickets" id="tickets">
-                <img src="tourism.png" alt="" width="32px" height="32px">
+                <img src="tourism.png" alt="Tourism Icon" width="32px" height="32px">
                 <h2>Tour Plan</h2>
-                <p>We provide you the best plan within a short
-                    time explore more.</p>
+                <p>We provide you with the best plan to explore more in a short time.</p>
             </div>
         </div>
     </div>
 
+    <!-- Overlay section for company achievements -->
     <div class="service2">
         <div class="overlay">
-    <h1>EthioTour aims to give you <br> the best of services</h1>
-            <p>We always try to make our customer Happy. We provide all kind of<br>
-                facilities. Your Satisfaction is our main priority.</p>
+            <h1>EthioTour aims to give you <br> the best of services</h1>
+            <p>We always strive to make our customers happy. We provide all kinds of facilities. Your satisfaction is our main priority.</p>
 
-                <div class="achievments" style="display: flex; justify-content: center; align-items: center;">
-                    <div class="achievment">
-                        <img src="calendar.png" alt="" width="32px" height="32px">
-                        <h3>15+</h3>
-                        <p>Years of Experience</p>
-                    </div>
-                    <div class="achievment">
-                        <img src="diagram.png" alt="" width="32px" height="32px">
-                        <h3>20K+</h3>
-                        <p>Happy Customers</p>
-                    </div>
-                    <div class="achievment">
-                        <img src="location.png" alt="" width="32px" height="32px">
-                        <h3>350+</h3>
-                        <p>Places Visited</p>
-                    </div>
-                    <div class="achievment">
-                        <img src="history.png" alt="" width="32px" height="32px">
-                        <h3>500+</h3>
-                        <p>Travel History</p>
-                    </div>
+            <!-- Displaying key company achievements -->
+            <div class="achievments" style="display: flex; justify-content: center; align-items: center;">
+                <div class="achievment">
+                    <img src="calendar.png" alt="Years of Experience Icon" width="32px" height="32px">
+                    <h3>15+</h3>
+                    <p>Years of Experience</p>
+                </div>
+                <div class="achievment">
+                    <img src="diagram.png" alt="Happy Customers Icon" width="32px" height="32px">
+                    <h3>20K+</h3>
+                    <p>Happy Customers</p>
+                </div>
+                <div class="achievment">
+                    <img src="location.png" alt="Places Visited Icon" width="32px" height="32px">
+                    <h3>350+</h3>
+                    <p>Places Visited</p>
+                </div>
+                <div class="achievment">
+                    <img src="history.png" alt="Travel History Icon" width="32px" height="32px">
+                    <h3>500+</h3>
+                    <p>Travel History</p>
                 </div>
             </div>
+        </div>
     </div>
 
-    <div class="">
-        <h1 style="text-align: center; font-family: 'Open sans', sans-serif; padding-bottom: 20px; ">Our Popular Destinations</h1>
+    <!-- Popular destinations section -->
+    <div>
+        <h1 style="text-align: center; font-family: 'Open sans', sans-serif; padding-bottom: 20px;">Our Popular Destinations</h1>
         <div class="popular-destinations">
-         <img class="world-pic" src="world-bg.png">
+            <img class="world-pic" src="world-bg.png" alt="World Map">
             <div class="destinations">
+                <!-- Individual destination block -->
                 <div class="destination">
-                    <img src="lalibela.png" class="destination-pic">
+                    <img src="lalibela.png" class="destination-pic" alt="Thailand">
                     <div class="name-of-pop-des">
                         <h3 style="font-weight: 200; margin-bottom: -10px;">Thailand</h3>
                         <h4>20+ Spots</h4>
                     </div>
-                    <img src="next.png" class="next">
+                    <img src="next.png" class="next" alt="Next Icon">
                 </div>
                 <div class="destination">
-                    <img src="greece.png" class="destination-pic">
+                    <img src="greece.png" class="destination-pic" alt="Greece">
                     <div class="name-of-pop-des">
                         <h3 style="font-weight: 200; margin-bottom: -10px;">Greece</h3>
                         <h4>16+ Spots</h4>
                     </div>
-                    <img src="next.png" class="next">
+                    <img src="next.png" class="next" alt="Next Icon">
                 </div>
                 <div class="destination">
-                    <img src="https://i.pinimg.com/564x/23/00/45/2300453aab5865f6152b806533557376.jpg" class="destination-pic">
+                    <img src="https://i.pinimg.com/564x/23/00/45/2300453aab5865f6152b806533557376.jpg" class="destination-pic" alt="Sof Umer">
                     <div class="name-of-pop-des">
-                        <h3 style="font-weight: 200; margin-bottom: -10px;">Sof umer</h3>
+                        <h3 style="font-weight: 200; margin-bottom: -10px;">Sof Umer</h3>
                         <h4>12+ Spots</h4>
                     </div>
-                    <img src="next.png" class="next">
+                    <img src="next.png" class="next" alt="Next Icon">
                 </div>
             </div>
-            </div>
+        </div>
     </div>
 
+    <!-- Tour packages section -->
     <div class="tour-packages-section">
         <h2 class="section-title">Our Trending Tour Packages</h2>
         <div class="tour-cards">
+            
+            <!-- Individual tour package card -->
             <div class="tour-card">
                 <img src="https://i.pinimg.com/564x/0a/b9/b2/0ab9b290c229ed9eb4dd5f05dcb3a929.jpg" alt="Brazil" class="tour-image">
                 <div class="tour-info">
-                    <div class="tour-country">
-                    </div>
+                    <div class="tour-country"></div>
                     <div class="tour-details">
                         <p>10 Days</p>
                         <p>30 People Going</p>
@@ -147,66 +178,61 @@
                     <button class="explore-btn" onclick="window.location.href='packages BRAZ.html'">Explore Now</button>
                 </div>
             </div>
-    
+
+            <!-- Additional tour package cards follow the same structure -->
             <div class="tour-card">
-                <img src="https://i.pinimg.com/564x/ca/1d/02/ca1d025accde6ea1a6d1323f6bcfbe6f.jpg" alt="Thailand" class="tour-image">
+                <img src="https://i.pinimg.com/564x/ca/1d/02/ca1d025accde6ea1a6d9ae98e8e1a1c0.jpg" alt="Africa" class="tour-image">
                 <div class="tour-info">
-                    <div class="tour-country">
+                    <div class="tour-country"></div>
+                    <div class="tour-details">
+                        <p>8 Days</p>
+                        <p>25 People Going</p>
                     </div>
+                    <h3>Africa</h3>
+                    <p class="tour-location">Africa</p>
+                    <p class="tour-price">
+                        <span class="current-price">$1,800</span>
+                        <span class="old-price">$2,000</span>
+                    </p>
+                    <p class="tour-rating">★★★★★</p>
+                    <p class="tour-description">Discover the diverse wildlife, stunning landscapes, and rich cultures of Africa on this unforgettable tour.</p>
+                    <button class="explore-btn" onclick="window.location.href='packages AFR.html'">Explore Now</button>
+                </div>
+            </div>
+
+            <div class="tour-card">
+                <img src="https://i.pinimg.com/564x/24/84/66/248466a4f13b098bde1f9fd9ef602c6e.jpg" alt="USA" class="tour-image">
+                <div class="tour-info">
+                    <div class="tour-country"></div>
                     <div class="tour-details">
                         <p>12 Days</p>
-                        <p>20 People Going</p>
+                        <p>40 People Going</p>
                     </div>
-                    <h3>Thailand</h3>
-                    <p class="tour-location">Asia</p>
+                    <h3>USA</h3>
+                    <p class="tour-location">North America</p>
                     <p class="tour-price">
-                        <span class="current-price">$1,200</span>
-                        <span class="old-price">$1,500</span>
+                        <span class="current-price">$2,500</span>
+                        <span class="old-price">$3,000</span>
                     </p>
                     <p class="tour-rating">★★★★★</p>
-                    <p class="tour-description">Discover the rich history and beautiful beaches of Thailand, from the temples of Bangkok to the islands of Phuket.</p>
-                    <button class="explore-btn" onclick="window.location.href='packages THAILAND.html'">Explore Now</button>
+                    <p class="tour-description">Explore the iconic cities, national parks, and diverse culture of the USA on this comprehensive tour.</p>
+                    <button class="explore-btn" onclick="window.location.href='packages USA.html'">Explore Now</button>
                 </div>
             </div>
-    
-            <div class="tour-card">
-                <img src="https://i.pinimg.com/736x/a2/d6/39/a2d639e2c08cd49f7aba4ede1c435c06.jpg" alt="Australia" class="tour-image">
-                <div class="tour-info">
-                    <div class="tour-country">
-                    </div>
-                    <div class="tour-details">
-                        <p>15 Days</p>
-                        <p>18 People Going</p>
-                    </div>
-                    <h3>Australia</h3>
-                    <p class="tour-location">Oceania</p>
-                    <p class="tour-price">
-                        <span class="current-price">$2,000</span>
-                        <span class="old-price">$2,300</span>
-                    </p>
-                    <p class="tour-rating">★★★★★</p>
-                    <p class="tour-description">Explore the iconic landmarks and natural wonders of Australia, from the Great Barrier Reef to the Sydney Opera House.</p>
-                    <button class="explore-btn" onclick="window.location.href='packages aust.html'">Explore Now</button>
-                </div>
-            </div>
+
         </div>
     </div>
-    
 
-
-
+    <!-- JavaScript to handle mobile menu toggle -->
     <script>
-    const mobileMenu = document.getElementById('mobile-menu');
-    const menu = document.querySelector('.menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menu = document.querySelector('.menu');
+        
+        // Toggle mobile menu visibility on click
+        mobileMenu.addEventListener('click', function() {
+            menu.classList.toggle('active');
+        });
+    </script>
 
-    mobileMenu.addEventListener('click', () => {
-        menu.classList.toggle('menu-active');
-    
-    });
-
-
-</script>
-
-    
 </body>
 </html>
