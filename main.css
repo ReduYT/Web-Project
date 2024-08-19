@@ -68,6 +68,7 @@ body {
 .menu-item .dropdown a {
     display: block;
     border-radius: 0;
+    color: #000000;
 }
 .menu-item .dropdown a:hover {
     background-color: #f0f0f0;
@@ -473,22 +474,22 @@ body {
     }
 
     .card:hover {
-        background-image: url('face.jpg');
+        background-image: url('adventures/face.jpg');
         color: white;
     }
 
     .card:nth-child(2):hover {
-        background-image: url('calm.jpg');
+        background-image: url('adventures/calm.jpg');
         color: white;
     }
 
     .card:nth-child(3):hover {
-        background-image: url('couple.jpg');
+        background-image: url('adventures/couple.jpg');
         color: white;
     }
 
     .card:nth-child(4):hover {
-        background-image: url('yoga.jpg');
+        background-image: url('adventures/yoga.jpg');
         color: white;
     }
 
