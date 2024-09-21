@@ -1,44 +1,33 @@
-<!-- Main Page -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- Link to external CSS file -->
     <link rel="stylesheet" href="secondthoughts.css">
 
-    <!-- Preconnect to Google Fonts for faster loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <!-- Link to Google Fonts for custom typography -->
     <link href="https://fonts.googleapis.com/css2?family=Chewy&family=Kiwi+Maru&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Playwrite+NG+Modern:wght@100..400&display=swap" rel="stylesheet">
 
-    <!-- Page Title -->
     <title>Ethio Tours | Discover Unforgettable Experiences</title>
 </head>
 <body>
 
-    <!-- Main section including navbar and hero content -->
     <section class="main-section">
         
-        <!-- Navigation bar -->
         <div class="navbar">
             
-            <!-- Logo with link to the homepage -->
             <a href="#" class="logo"><img src="image-removebg-preview.png" width="100px" height="70px" alt="Logo"></a>
             
-            <!-- Hamburger menu icon for mobile view -->
             <span class="menu-toggle" id="mobile-menu">☰</span>
 
-            <!-- Main menu items -->
             <ul class="menu">
                 <li class="menu-item"><a href="destinations.html">Destinations</a></li>
                 <li class="menu-item"><a href="food.html">Food and Culinary</a></li>
                 <li class="menu-item">
                     <a href="main.html">Adventures</a>
-                    <!-- Dropdown menu under "Adventures" -->
                     <div class="dropdown">
                         <a id="health" href="#health">Health, Spa and Wellness</a>
                         <a id="river" href="#river">River Cruise</a>
@@ -119,13 +108,11 @@
         </div>
     </div>
 
-    <!-- Popular destinations section -->
     <div>
         <h1 style="text-align: center; font-family: 'Open sans', sans-serif; padding-bottom: 20px;">Our Popular Destinations</h1>
         <div class="popular-destinations">
             <img class="world-pic" src="secondthoughts/world-bg.png" alt="World Map">
             <div class="destinations">
-                <!-- Individual destination block -->
                 <div class="destination">
                     <img src="secondthoughts/lalibela.png" class="destination-pic" alt="Thailand">
                     <div class="name-of-pop-des">
@@ -154,12 +141,10 @@
         </div>
     </div>
 
-    <!-- Tour packages section -->
     <div class="tour-packages-section">
         <h2 class="section-title">Our Trending Tour Packages</h2>
         <div class="tour-cards">
             
-            <!-- Individual tour package card -->
             <div class="tour-card">
                 <img src="https://i.pinimg.com/564x/0a/b9/b2/0ab9b290c229ed9eb4dd5f05dcb3a929.jpg" alt="Brazil" class="tour-image">
                 <div class="tour-info">
@@ -180,7 +165,6 @@
                 </div>
             </div>
 
-            <!-- Additional tour package cards follow the same structure -->
             <div class="tour-card">
                 <img src="https://i.pinimg.com/564x/ca/1d/02/ca1d025accde6ea1a6d9ae98e8e1a1c0.jpg" alt="Africa" class="tour-image">
                 <div class="tour-info">
@@ -224,12 +208,10 @@
         </div>
     </div>
 
-    <!-- JavaScript to handle mobile menu toggle -->
     <script>
         const mobileMenu = document.getElementById('mobile-menu');
         const menu = document.querySelector('.menu');
         
-        // Toggle mobile menu visibility on click
         mobileMenu.addEventListener('click', function() {
             menu.classList.toggle('active');
         });
