@@ -25,27 +25,17 @@
             padding: 30px;
         }
 
-        .tabs {
-            display: flex;
-            justify-content: space-around;
-            background-color: #4CAF50;
-            border-radius: 5px 5px 0 0;
-        }
-
         .tab-link {
             flex-grow: 1;
             text-align: center;
             padding: 15px;
-            background-color: #4CAF50;
+            background-color: #2E7D32;
             color: #ffffff;
             border: none;
             cursor: pointer;
             transition: background-color 0.3s;
-        }
-
-        .tab-link.active,
-        .tab-link:hover {
-            background-color: #2E7D32;
+            border-radius: 5px 5px 0 0;
+            width: 100%;
         }
 
         .heading {
@@ -80,7 +70,8 @@
             box-sizing: border-box;
         }
 
-        .form-group input[type="submit"] {
+        .form-group input[type="submit"],
+        .form-group button {
             background-color: #4CAF50;
             color: #ffffff;
             border: none;
@@ -88,7 +79,8 @@
             transition: background-color 0.3s;
         }
 
-        .form-group input[type="submit"]:hover {
+        .form-group input[type="submit"]:hover,
+        .form-group button:hover {
             background-color: #2E7D32;
         }
 
@@ -129,89 +121,145 @@
             border-radius: 5px;
             display: none;
         }
-
     </style>
 </head>
 <body>
     <section class="booking" id="booking">
-        <div class="tabs">
-            <button class="tab-link active">Tours</button>
-        </div>
+        <button class="tab-link active">Tours</button>
         <h1 class="heading">BOOK YOUR TOUR</h1>
         <div class="form-container">
-            <form id="bookingForm">
+            <form id="bookingForm" action="booking.php" method="POST">
                 <div class="form-group">
                     <label for="firstName">Name *</label>
-                    <input type="text" id="firstName" placeholder="Name" required>
+                    <input type="text" id="firstName" name="firstName" placeholder="Name" required>
                     <span class="error" id="firstNameError"></span>
                 </div>
                 <div class="form-group">
                     <label for="email">E-mail *</label>
-                    <input type="email" id="email" placeholder="wanderWaves@gmail.com" required>
+                    <input type="email" id="email" name="email" placeholder="wanderWaves@gmail.com" required>
                     <span class="error" id="emailError"></span>
                 </div>
                 <div class="form-group">
                     <label for="tour">Select Tour *</label>
-                    <select id="tour" required>
-                        <option value="Paris">Paris</option>
-                        <option value="New York">Argentina</option>
-                        <option value="Australia">Australia</option>
+                    <select id="tour" name="tour" required onchange="populateCities()">
+                        <option value="">Select a tour</option>
                         <option value="Greece">Greece</option>
-                        <option value="England">England</option>
+                        <option value="Italy">Italy</option>
                         <option value="Thailand">Thailand</option>
-                        <option value="America">America</option>
-                        <option value="Brazil">Brazil</option>
                     </select>
                     <span class="error" id="tourError"></span>
                 </div>
                 <div class="form-group">
+                    <label for="city">City *</label>
+                    <select id="city" name="city" required>
+                        <option value="">Select a city</option>
+                    </select>
+                    <span class="error" id="cityError"></span>
+                </div>
+                <div class="form-group">
                     <label for="departure">Departure On *</label>
-                    <input type="date" id="departure" required>
+                    <input type="date" id="departure" name="departure" required>
                     <span class="error" id="departureError"></span>
                 </div>
                 <div class="form-group">
-                    <input type="submit" value="Next" class="btn">
+                    <label for="num_people">Number of People *</label>
+                    <input type="number" id="num_people" name="num_people" placeholder="Enter number of people" required>
+                    <span class="error" id="numPeopleError"></span>
+                </div>
+                <div class="form-group">
+                    <label for="tour_price">Price per Person *</label>
+                    <input type="text" id="tour_price" name="tour_price" value="100" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="total_price">Total Price *</label>
+                    <input type="text" id="total_price" name="total_price" readonly>
+                </div>
+                <div class="form-group">
+                    <button type="button" id="nextButton">Next</button>
+                </div>
+                <div id="paymentSection" class="paymentSection">
+                    <h2>Select Your Payment Method</h2>
+                    <div id="paymentOptions">
+                        <div class="option" data-payment="Credit Card">Credit Card</div>
+                        <div class="option" data-payment="PayPal">PayPal</div>
+                        <div class="option" data-payment="Bank Transfer">Bank Transfer</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Enter Password *</label>
+                        <input type="password" id="password" name="password" required>
+                        <span class="error" id="passwordError"></span>
+                    </div>
+                    <button id="payButton" type="button">Pay</button>
+                </div>
+                <div id="confirmationMessage" class="confirmationMessage">
+                    <h2>Payment Successful!</h2>
+                    <p>Your tour booking has been confirmed. Have a great trip!</p>
                 </div>
             </form>
-        </div>
-
-        <div id="paymentSection" class="paymentSection">
-            <h2>Select Your Payment Method</h2>
-            <div id="paymentOptions">
-                <div class="option" data-payment="Credit Card">Credit Card</div>
-                <div class="option" data-payment="PayPal">PayPal</div>
-                <div class="option" data-payment="Bank Transfer">Bank Transfer</div>
-            </div>
-
-            <div id="passwordSection" class="passwordSection">
-                <label for="password">Enter Password *</label>
-                <input type="password" id="password" required>
-                <span class="error" id="passwordError"></span>
-            </div>
-
-            <button id="payButton">Pay</button>
-        </div>
-
-        <div id="confirmationMessage" class="confirmationMessage">
-            <h2>Payment Successful!</h2>
-            <p>Your tour booking has been confirmed. Have a great trip!</p>
         </div>
     </section>
 
     <script>
-        document.getElementById('bookingForm').addEventListener('submit', function(event) {
-            event.preventDefault();
+        const tourPrices = {
+            "Greece": 150,
+            "Italy": 200,
+            "Thailand": 100
+        };
 
+        const cities = {
+            "Greece": ["Athens", "Thessaloniki", "Heraklion"],
+            "Italy": ["Rome", "Venice", "Florence"],
+            "Thailand": ["Bangkok", "Chiang Mai", "Phuket"]
+        };
+
+        function populateCities() {
+            const country = document.getElementById("tour").value;
+            const citySelect = document.getElementById("city");
+
+            citySelect.innerHTML = "<option value=''>Select a city</option>";
+
+            if (cities[country]) {
+                cities[country].forEach(function(city) {
+                    const option = document.createElement("option");
+                    option.value = city;
+                    option.textContent = city;
+                    citySelect.appendChild(option);
+                });
+            }
+
+            updateTotalPrice();
+        }
+
+        function updateTotalPrice() {
+            const country = document.getElementById("tour").value;
+            const numPeople = document.getElementById("num_people").value;
+
+            if (tourPrices[country] && numPeople) {
+                const pricePerPerson = tourPrices[country];
+                const totalPrice = pricePerPerson * numPeople;
+                document.getElementById("total_price").value = totalPrice.toFixed(2);
+                document.getElementById('tour_price').value = pricePerPerson.toFixed(2);
+            } else {
+                document.getElementById("total_price").value = "";
+            }
+        }
+
+        document.getElementById("tour").addEventListener('change', updateTotalPrice);
+        document.getElementById("num_people").addEventListener('input', updateTotalPrice);
+
+        document.getElementById('nextButton').addEventListener('click', function() {
             let isValid = true;
 
             const firstName = document.getElementById('firstName').value;
             const email = document.getElementById('email').value;
             const tour = document.getElementById('tour').value;
+            const city = document.getElementById('city').value;
             const departure = document.getElementById('departure').value;
 
             document.getElementById('firstNameError').textContent = '';
             document.getElementById('emailError').textContent = '';
             document.getElementById('tourError').textContent = '';
+            document.getElementById('cityError').textContent = '';
             document.getElementById('departureError').textContent = '';
 
             if (!firstName) {
@@ -226,6 +274,11 @@
 
             if (!tour) {
                 document.getElementById('tourError').textContent = 'Please select a tour.';
+                isValid = false;
+            }
+
+            if (!city) {
+                document.getElementById('cityError').textContent = 'Please select a city.';
                 isValid = false;
             }
 
@@ -272,6 +325,7 @@
         document.getElementById('payButton').addEventListener('click', function() {
             if (selectedPayment) {
                 document.getElementById('confirmationMessage').style.display = 'block';
+                document.getElementById('bookingForm').submit();
             }
         });
     </script>

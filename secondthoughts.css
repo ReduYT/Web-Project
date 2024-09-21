@@ -51,8 +51,8 @@ body {
     font-size: 33px;
     width: 50%;
 }
-.packages {
-    background-color: rgba(0, 173, 60, 0.981);
+.packagess {
+    background-color: rgba(12, 137, 56, 0.981);
     border: none;
     border-radius: 5px;
     color: white;
@@ -60,6 +60,11 @@ body {
     width: 200px;
     margin-top: 30px;
 }
+.packagess:hover {
+    background-color: rgba(11, 106, 44, 0.981);
+    cursor: pointer;
+}
+
 .navbar {
     display: flex;
     justify-content: space-between;
