@@ -19,12 +19,12 @@ if ($conn->connect_error) {
 
 $user_id = $_SESSION['user_id'];
 $sql = "SELECT fullname, email FROM users WHERE id = ?";
-$stmt = $conn->prepare($sql);
-$stmt->bind_param("i", $user_id);
-$stmt->execute();
-$result = $stmt->get_result();
+$statement = $conn->prepare($sql);
+$statement->bind_param("i", $user_id);
+$statement->execute();
+$result = $statement->get_result();
 $user = $result->fetch_assoc();
-$stmt->close();
+$statement->close();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $fullname = $_POST['fullname'];
@@ -44,20 +44,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     $sql .= " WHERE id = ?";
 
-    $stmt = $conn->prepare($sql);
+    $statement = $conn->prepare($sql);
     if (!empty($password)) {
-        $stmt->bind_param("sssi", $fullname, $email, $hashed_password, $user_id);
+        $statement->bind_param("sssi", $fullname, $email, $hashed_password, $user_id);
     } else {
-        $stmt->bind_param("ssi", $fullname, $email, $user_id);
+        $statement->bind_param("ssi", $fullname, $email, $user_id);
     }
 
-    if ($stmt->execute()) {
+    if ($statement->execute()) {
         echo "Profile updated successfully!";
     } else {
-        echo "Error: " . $stmt->error;
+        echo "Error: " . $statement->error;
     }
 
-    $stmt->close();
+    $statement->close();
 }
 
 $conn->close();

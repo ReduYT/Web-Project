@@ -214,7 +214,7 @@
         <a href="secondthoughts.html" class="logo"><img src="image-removebg-preview.png" width="100px" height="70px" alt="Logo"></a>
         <span class="menu-toggle" onclick="toggleMenu()">&#9776;</span>
         <ul class="menu">
-            <li class="menu-item"><a href="destinations.html">Destinations</a></li>
+            <li class="menu-item"><a href="destinations.php">Destinations</a></li>
             <li class="menu-item"><a href="food.html">Food and Culinary</a></li>
             <li class="menu-item">
                 <a href="main.html">Adventures</a>
@@ -224,8 +224,8 @@
                             <a id="festivals" href="main.html#events">Festivals and Events</a>
                 </div>
             </li>
-            <li class="menu-item"><a href="#contact">Contact</a></li>
-        <img src="user-interface.png" class="login-logo menu-item" onclick="window.location.href='login.html'" width="40px" height="40px" style="margin-right: 30px;">
+            <li class="menu-item"><a href="contact.html">Contact</a></li>
+        <img src="user-interface.png" class="login-logo menu-item" onclick="window.location.href='account.html'" width="40px" height="40px" style="margin-right: 30px;">
         </ul>
     </div>
 
@@ -235,10 +235,10 @@
             <p>We'd love to hear from you! Whether you have a question about our tours, pricing, need a demo, or anything else, our team is ready to answer all your questions.</p>
             
             <div class="contact-form">
-                <form action="submit_form" method="POST">
+                <form action="contact.php" method="POST">
                     <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" required>
+                        <label for="fullname">Full Name:</label>
+    <input type="text" id="fullname" name="fullname" required>
                     </div>
                     
                     <div class="form-group">
@@ -271,7 +271,7 @@
                 </div>
                 <div class="info-item">
                     <i class="fas fa-envelope"></i>
-                    <p>info@ethiotours.com</p>
+                    <p>info@ChillEscapades.com</p>
                 </div>
             </div>
             

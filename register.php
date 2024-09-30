@@ -24,10 +24,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
     $sql = "INSERT INTO users (fullname, email, password) VALUES (?, ?, ?)";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("sss", $fullname, $email, $hashed_password);
+    $statement = $conn->prepare($sql);
+    $statement->bind_param("sss", $fullname, $email, $hashed_password);
 
-    if ($stmt->execute()) {
+    if ($statement->execute()) {
         echo "Account created successfully!";
         header("Location: login.html");
         exit();
@@ -35,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
 
-    $stmt->close();
+    $statement->close();
 }
 
 $conn->close();

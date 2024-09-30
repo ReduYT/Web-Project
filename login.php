@@ -17,19 +17,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST['password'];
 
     $sql = "SELECT id, password FROM users WHERE email = ?";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("s", $email);
-    $stmt->execute();
-    $result = $stmt->get_result();
+    $statement = $conn->prepare($sql);
+    $statement->bind_param("s", $email);
+    $statement->execute();
+    $result = $statement->get_result();
     $user = $result->fetch_assoc();
 
     if ($user) {
-        echo "Password from DB: " . $user['password'] . "<br>";
-        echo "Password entered: " . htmlspecialchars($password) . "<br>";
-        
+        echo "Password entered: " . ($password) . "<br>";
         if (password_verify($password, $user['password'])) {
             $_SESSION['user_id'] = $user['id'];
-            header("Location: profile.html");
+            header("Location: secondthoughts.html");
             exit();
         } else {
             echo "Invalid email or password!";
@@ -38,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "No user found with that email.";
     }
 
-    $stmt->close();
+    $statement->close();
 }
 
 $conn->close();

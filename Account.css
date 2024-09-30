@@ -1,0 +1,153 @@
+body {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('login.bg.jfif') no-repeat center center fixed;
+    background-size: cover;
+    color: #ffffff;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2px 30px;
+    font-family: "Noto Serif", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-size: 18px;
+}
+.navbar a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 9px 30px;
+    margin-left: 10px;
+    font-weight: bold;
+}
+#health, #river, #festivals {
+    color: #2a2a2a;
+}
+.dropdown {
+    width: 30%;
+}
+.navbar a:hover {
+    background-color: #f0f0f0;
+    color: #333;
+    border-radius: 30px;
+    padding: 10px 30px;
+}
+.menu {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.menu-item {
+    position: relative;
+    display: block;
+}
+.menu-item .dropdown {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    width: 200px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+.menu-item .dropdown a {
+    display: block;
+    border-radius: 0;
+}
+.menu-item .dropdown a:hover {
+    background-color: #f0f0f0;
+}
+.menu-item:hover .dropdown {
+    display: block;
+}
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+.login-logo {
+    width:40px;
+    height: 40px;
+    margin-left: -15%; 
+    margin-right: 5%;
+}
+.login-logo:hover {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+.account-management-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.content {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 3rem;
+    border-radius: 1.5rem;
+    text-align: center;
+    width: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #0c3d30;
+}
+
+p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    color: #383f3d;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.action-buttons button {
+    background-color: #2ce6b4;
+    border: none;
+    color: white;
+    padding: 1rem 2rem;
+    margin: 0.5rem;
+    border-radius: 14px;
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.action-buttons button:hover {
+    background-color: white;
+    color: #06c592;
+    border: 2px solid #06c592;
+}
+
+@media (max-width: 768px) {
+    .content {
+        width: 90%;
+    }
+
+    .action-buttons button {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+}

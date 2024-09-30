@@ -27,16 +27,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($user_id) {
         $sql = "INSERT INTO bookings (user_id, destination, travel_date, num_people, total_price, booking_date) VALUES (?, ?, ?, ?, ?, NOW())";
-        $stmt = $conn->prepare($sql);
-        $stmt->bind_param("issid", $user_id, $destination, $travel_date, $num_people, $total_price);
+        $statement = $conn->prepare($sql);
+        $statement->bind_param("issid", $user_id, $destination, $travel_date, $num_people, $total_price);
 
-        if ($stmt->execute()) {
+        if ($statement->execute()) {
             echo "Booking successful! Your booking to $destination for $num_people people on $travel_date has been confirmed.";
         } else {
-            echo "Error: " . $stmt->error;
+            echo "Error: " . $statement->error;
         }
 
-        $stmt->close();
+        $statement->close();
     } else {
         echo "User not found. Please register before booking.";
     }

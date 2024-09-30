@@ -1,0 +1,27 @@
+CREATE DATABASE Chill_Escapades;
+USE Chill_Escapades;
+CREATE TABLE users (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    fullname VARCHAR(100) NOT NULL,
+    email VARCHAR(50) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+CREATE TABLE booking (
+    booking_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    destination VARCHAR(100) NOT NULL,
+    travel_date DATE NOT NULL,
+    num_people INT NOT NULL,
+    total_price DECIMAL(10,2) NOT NULL,
+    booking_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+CREATE TABLE contact (
+    contact_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    fullname VARCHAR(100) NOT NULL,
+    email VARCHAR(50) NOT NULL,
+    subject VARCHAR(255) NOT NULL,
+    message TEXT NOT NULL,
+    contact_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

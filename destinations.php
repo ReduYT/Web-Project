@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -136,6 +137,37 @@
             padding: 10px;
             font-size: 1.2rem;
         }
+        .history-section {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    margin: 20px;
+    max-width: 1200px;
+    margin: 20px auto; 
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.table th, .table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+}
+
+.table th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.table tr:hover {
+    background-color: #f1f1f1;
+}
+
         @media (max-width: 600px) {
             .navbar {
                 flex-direction: column;
@@ -159,7 +191,9 @@
             .destination {
                 width: 90%;
             }
+            
         }
+        
     </style>
 </head>
 <body>
@@ -168,7 +202,7 @@
         <a href="secondthoughts.html" class="logo"><img src="image-removebg-preview.png" alt="Logo"></a>
         <span id="mobile-menu" class="menu-toggle">&#9776;</span>
         <ul class="menu">
-            <li class="menu-item"><a href="destinations.html">Destinations</a></li>
+            <li class="menu-item"><a href="destinations.php">Destinations</a></li>
             <li class="menu-item"><a href="food.html">Food and Culinary</a></li>
             <li class="menu-item">
                 <a href="main.html">Adventures</a>
@@ -180,7 +214,7 @@
             </li>
             <li class="menu-item"><a href="contact.html">Contact</a></li>
         </ul>
-        <img src="user-interface.png" class="login-logo" onclick="window.location.href='login.html'">
+        <img src="user-interface.png" class="login-logo" onclick="window.location.href='account.html'">
     </div>
 
         <h1>Explore Our Destinations</h1>
@@ -224,6 +258,41 @@
             <h2>America</h2>
         </div>
     </div>
+
+    <div class="history-section">
+        <h2>Your Booking History</h2>
+        <?php include 'destinations2.php'; ?> 
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Destination</th>
+                    <th>Travel Date</th>
+                    <th>Number of People</th>
+                    <th>Total Price</th>
+                    <th>Booking Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php if (!empty($bookings)): ?> 
+                    <?php foreach ($bookings as $booking): ?> 
+                        <tr>
+                            <td><?= $booking['destination'] ?></td>
+                            <td><?= $booking['travel_date'] ?></td>
+                            <td><?= $booking['num_people'] ?></td>
+                            <td>$<?= $booking['total_price'] ?></td>
+                            <td><?= $booking['booking_date'] ?></td>
+                        </tr>
+                    <?php endforeach; ?>
+                    <?php elseif (!isset($_SESSION['user_id'])): ?>
+                    <tr><td colspan="7">Not Logged in.</td></tr>
+                <?php else: ?>
+                    <tr><td colspan="7">No bookings found.</td></tr>
+                <?php endif; ?>
+                
+            </tbody>
+        </table>
+    </div>
+    
 
     <script>
         const menuToggle = document.querySelector('.menu-toggle');

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="account_management.css">
+    <title>Account Management</title>
+</head>
+<body>
+    <section class="container">
+        <div class="account-options">
+            <h2>Account Management</h2>
+            <div class="buttons">
+                <button onclick="window.location.href='login.html'">Sign In</button>
+                <button onclick="window.location.href='signup.html'">Sign Up</button>
+                <button onclick="window.location.href='manage_account.html'">Manage Account</button>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
