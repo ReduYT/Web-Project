@@ -9,48 +9,37 @@ body {
 .navbar {
     position: fixed;
     top: 0;
-    width: 100%;
+    width: 97%;
     z-index: 10;
-}
-.navbar {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     padding: 2px 30px;
-    font-family: "Noto Serif", serif;
-    font-optical-sizing: auto;
-    font-style: normal;
-    font-size: 18px;
+    background-color: rgba(0, 0, 0, 0.7);
 }
+
 .navbar a {
     color: #ffffff;
     text-decoration: none;
     padding: 9px 30px;
-    margin-left: 10px;
     font-weight: bold;
 }
+
 #health, #river, #festivals {
     color: #2a2a2a;
 }
-.dropdown {
-    width: 30%;
-}
-.navbar a:hover {
-    background-color: #f0f0f0;
-    color: #333;
-    border-radius: 30px;
-    padding: 10px 30px;
-}
+
 .menu {
     display: flex;
     list-style-type: none;
     margin: 0;
     padding: 0;
 }
+
 .menu-item {
     position: relative;
-    display: block;
 }
+
 .menu-item .dropdown {
     display: none;
     position: absolute;
@@ -60,39 +49,40 @@ body {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     z-index: 1;
 }
-.menu-item .dropdown a {
-    display: block;
-    border-radius: 0;
-}
-.menu-item .dropdown a:hover {
-    background-color: #f0f0f0;
-}
+
 .menu-item:hover .dropdown {
     display: block;
 }
+
+.menu-item .dropdown a {
+    display: block;
+    color: black;
+    padding: 10px;
+}
+
+.menu-item .dropdown a:hover {
+    background-color: #f0f0f0;
+}
+
 .menu-toggle {
     display: none;
     font-size: 24px;
     cursor: pointer;
 }
+
 .login-logo {
-    width:40px;
+    width: 40px;
     height: 40px;
     margin-left: -15%; 
     margin-right: 5%;
 }
-.login-logo:hover {
-    width: 50px;
-    height: 50px;
-    cursor: pointer;
-}
+
 .account-management-container {
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
 
 .content {
     background-color: rgba(255, 255, 255, 0.9);
@@ -141,13 +131,69 @@ p {
     border: 2px solid #06c592;
 }
 
-@media (max-width: 768px) {
+.active-menu {
+    display: flex;
+}
+
+@media (max-width: 700px) {
+
+    .menu {
+        display: none; 
+         position: absolute;
+         top: 60px; 
+         left: 0;
+         width: 100%;
+         background-color: rgb(49, 49, 49); 
+         z-index: 100; 
+     }
+ 
+     .menu-toggle {
+         display: block;
+         cursor: pointer;
+         margin: auto;
+     }
+     .menu-active {
+         display: block;
+         animation: slideDown 0.3s ease-out forwards;
+     }
+ 
+     .menu-item {
+         width: 100%;
+         text-align: center;
+         background-color: rgb(49, 49, 49); 
+         padding: 10px;
+ 
+     }
+ 
+     .menu-item a:hover {
+         background-color: transparent;
+     }
+     .menu-item .dropdown a:hover {
+         background-color: transparent;
+     }
+ 
+     .menu-item .dropdown {
+         position: relative;
+         width: 100%;
+         text-align: left;
+         display: none;
+         background-color: #282c34;
+     }
+ 
+     .menu-item:hover .dropdown {
+         display: block;
+     }
     .content {
         width: 90%;
+        color: #9fdcc3 !important;
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+    .login-logo {
+        display: none;
+    }
+    .menu-toggle {
+        display: block;
     }
 
-    .action-buttons button {
-        width: 100%;
-        margin-bottom: 1rem;
-    }
+    
 }
