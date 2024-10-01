@@ -2,7 +2,7 @@
 @keyframes reveal {
     0% {
       opacity: 0;
-      transform: translateY(50px);
+      transform: translateY(5px);
     }
     100% {
       opacity: 1;
@@ -376,39 +376,59 @@ body {
 }
 
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
 
-    .navbar {
-
+    .main-section {
+       height: 100vh;
     }
+
+    .main-section-heading {
+        width: 80%;
+    }
+    .main-section-heading h6 {
+        padding-bottom: 20vh;
+    }
+    .packagess {
+        background-color: rgba(12, 137, 56, 0.981);
+        border: none;
+        border-radius: 5px;
+        color: white;
+        height: 50px;
+        width: 200px;
+        margin-top: 30px;
+    }
+    
+
     .logo {
         display: none;
     }
-
     .menu {
-        flex-direction: column;
+       display: none; 
+        position: absolute;
+        top: 60px; 
+        left: 0;
         width: 100%;
-        background-color: #000000;
-        display: none;
-        z-index: 999;
-        color: #ffffff;
+        background-color: rgb(49, 49, 49); 
+        z-index: 100; 
     }
 
     .menu-toggle {
         display: block;
         cursor: pointer;
         margin: auto;
-        color: white;
     }
     .menu-active {
-        display: flex;
+        display: block;
         animation: slideDown 0.3s ease-out forwards;
     }
 
     .menu-item {
         width: 100%;
         text-align: center;
+        background-color: rgb(49, 49, 49); 
+
     }
+
     .menu-item a:hover {
         background-color: transparent;
     }
@@ -421,6 +441,7 @@ body {
         width: 100%;
         text-align: left;
         display: none;
+        background-color: #282c34;
     }
 
     .menu-item:hover .dropdown {
@@ -536,15 +557,65 @@ body {
     .destinations {
         width: 100%;
     }
+    .destinations {
+        margin-bottom: 2%;
+    }
     .spotlights {
         flex-direction: column;
     }
+    .tour-packages-section {
+        width: 100%;
+    }
     .tour-cards {
         flex-direction: column;
-        margin: auto;
+        gap: 15px;
+        width: 100%;
     }
+ 
     .tour-card {
-        margin: auto;
-        margin-bottom: 2%;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .tour-image {
+        height: 150px;
+    }
+
+    .tour-info {
+        padding: 15px;
+    }
+
+    .tour-country img {
+        width: 25px;
+        height: 25px;
+    }
+
+    .tour-details p {
+        font-size: 12px;
+    }
+
+    .tour-card h3 {
+        font-size: 1.3rem;
+    }
+
+    .tour-location, .tour-price, .tour-rating {
+        font-size: 13px;
+    }
+
+    .current-price {
+        font-size: 1rem;
+    }
+
+    .old-price {
+        font-size: 0.9rem;
+    }
+
+    .tour-description {
+        font-size: 0.85rem;
+    }
+
+    .explore-btn {
+        padding: 8px 15px;
+        font-size: 0.9rem;
     }
 }

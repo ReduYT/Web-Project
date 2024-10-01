@@ -18,7 +18,7 @@
             transform: translateY(50px);
         }
         @keyframes reveal {
-            0% { opacity: 0; transform: translateY(50px); }
+            0% { opacity: 0; transform: translateY(5px); }
             100% { opacity: 1; transform: translateY(0); }
         }
         .navbar {
@@ -169,18 +169,46 @@
 }
 
         @media (max-width: 600px) {
+
             .navbar {
                 flex-direction: column;
                 padding: 10px;
+                margin-top: 5%;
             }
+            .main-section {
+                width: 100vw;
+            }
+            
+            .logo {
+                height: 30px;
+                width: 30px;
+                position: absolute;
+                left: 5%;
+                border: none
+                margin-top: 5%;
+            }
+            .logo img {
+                height: 30px;
+                width: 30px;
+            }
+            .login-logo {
+                position: absolute;
+                top: 15%;
+                right: 5%;
+            }
+
             .menu-toggle {
                 display: block;
+                position: absolute;
+                left: 50%;
             }
             .menu {
                 display: none;
                 flex-direction: column;
                 width: 100%;
                 background-color: #282c34;
+                margin-top: 15%;
+
             }
             .menu-active {
                 display: flex;
@@ -190,6 +218,17 @@
             }
             .destination {
                 width: 90%;
+            }
+            table {
+                width: 90vw;
+                .table th, .table td {
+                border: 1px solid #ddd;
+                padding: 5px;
+                text-align: center;
+}
+            }
+            .history-section {
+                width: 100vw;
             }
             
         }

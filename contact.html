@@ -12,6 +12,8 @@
             padding: 0;
             background-image: url('login.bg.jfif');
             background-size: cover;
+            display: flex;
+            flex-direction: column;
         }
 
         .navbar {
@@ -152,6 +154,8 @@
 
         .contact-info {
             margin-top: 20px;
+            display: flex;
+            flex-direction: column;
         }
 
         .contact-info .info-item {
@@ -183,7 +187,7 @@
             color: #083668;
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 700px) {
             .menu {
                 flex-direction: column;
                 display: none;
@@ -203,9 +207,19 @@
             .menu-item {
                 margin: 10px 0;
             }
-            .contact-section, .container {
-                width: 95%;
+            #contact {
+                width: 80vw;
             }
+            .container {
+                width: 95%;
+
+            }
+
+            .info-item {
+                margin-left: -60vw;
+                width: 50%;
+            }
+
         }
     </style>
 </head>
@@ -228,6 +242,7 @@
         <img src="user-interface.png" class="login-logo menu-item" onclick="window.location.href='account.html'" width="40px" height="40px" style="margin-right: 30px;">
         </ul>
     </div>
+    <div style="position: fixed; right: 3%; bottom: 3%; height: 40px; width: 40ox;"><img src="user-interface.png" height="40px" width="40px"></div>
 
     <section id="contact" class="contact-section">
         <div class="container">
